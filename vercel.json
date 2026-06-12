@@ -19,11 +19,20 @@
       "dest": "api/index.py"
     },
     {
-      "handle": "filesystem"
+      "src": "/assets/(.*)",
+      "dest": "/dashboard/assets/$1"
+    },
+    {
+      "src": "/favicon.svg",
+      "dest": "/dashboard/favicon.svg"
+    },
+    {
+      "src": "/icons.svg",
+      "dest": "/dashboard/icons.svg"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/dashboard/index.html"
     }
   ]
 }
