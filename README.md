@@ -1,12 +1,12 @@
-# ⚡ Cache Eviction Simulator
+![Cache Eviction Simulator Landing Page](./dashboard/src/assets/landing_page.png)
+## Cache Eviction Simulator
 
 A next-generation, interactive cache simulation platform built with **FastAPI** (Python) and **React Vite** (JavaScript). This system allows you to visual-trace and benchmark traditional cache policies, multi-level memory hierarchies, and an online-trained Machine Learning (Random Forest) cache replacement model.
 
-🖥️ **Live Web Application (Vercel)**: [https://cache-replacement-system.vercel.app/](https://cache-replacement-system.vercel.app/)
+ **Live Web Application (Vercel)**: [https://cache-replacement-system.vercel.app/](https://cache-replacement-system.vercel.app/)
 
----
 
-## 🚀 Key Features
+##  Key Features
 
 *   **Interactive Sandbox Playground**: Step through cache requests one-by-one to visualize hits, misses, and evictions key-by-key across multiple policies simultaneously.
 *   **Traditional Policy Benchmark**: Side-by-side performance showdown of classic cache algorithms (FIFO, LRU, LFU, and 2Q) on various workload patterns.
@@ -15,7 +15,7 @@ A next-generation, interactive cache simulation platform built with **FastAPI** 
 
 ---
 
-## 🛠️ Architecture & Tech Stack
+##  Architecture & Tech Stack
 
 ```mermaid
 graph TD
@@ -36,7 +36,7 @@ graph TD
 
 ---
 
-## 🏃 Local Quick Start
+##  Local Quick Start
 
 ### Prerequisites
 *   Python 3.8 or higher
@@ -80,7 +80,7 @@ powershell -ExecutionPolicy Bypass -File start.ps1
 
 ---
 
-## 📦 Vercel Deployment
+##  Vercel Deployment
 
 This project is fully configured for Vercel using `vercel.json`.
 
@@ -90,5 +90,5 @@ This project is fully configured for Vercel using `vercel.json`.
 
 ---
 
-## 📝 License
+## License
 Built with ❤️ by [ninjanavya](https://github.com/ninjanavya).
