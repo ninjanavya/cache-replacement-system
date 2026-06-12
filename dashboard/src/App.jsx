@@ -861,10 +861,7 @@ function LandingPage({ onLaunch }) {
       {/* Hero Section */}
       <main className="max-w-7xl w-full mx-auto px-6 py-16 flex-grow flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="flex-1 text-left max-w-xl">
-          <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#10b981] bg-[#10b981]/10 border border-[#10b981]/20 px-3 py-1 rounded-full mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"/>
-            Vercel Ready Deploy
-          </div>
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
             Cache Eviction<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#6366f1]">
