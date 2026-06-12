@@ -842,12 +842,109 @@ const EmptyChart = ({ label }) => (
   </div>
 );
 
+// ─── Landing Page Component ───────────────────────────────────────────────
+function LandingPage({ onLaunch }) {
+  return (
+    <div className="min-h-screen bg-[#020617] text-[#f9fafb] font-sans flex flex-col justify-between selection:bg-[#10b981] selection:text-[#020617]">
+      {/* Navbar */}
+      <header className="max-w-7xl w-full mx-auto px-6 py-5 flex items-center justify-between border-b border-[#1f2937]/50">
+        <div className="flex items-center gap-2 font-bold tracking-tight text-base">
+          <span className="text-[10px] font-bold text-[#10b981] font-mono bg-[#10b981]/10 border border-[#10b981]/20 px-2 py-0.5 rounded tracking-wider uppercase">Cache Eviction SIM</span>
+        </div>
+        <a href="https://github.com/ninjanavya/cache-replacement-system" target="_blank" rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-xs font-semibold text-[#f9fafb] bg-[#111827] border border-[#1f2937] hover:border-[#374151] px-4 py-2 rounded-xl transition-all shadow-md">
+          <GitBranch className="h-4 w-4 text-[#10b981]"/>
+          <span>View GitHub</span>
+        </a>
+      </header>
+
+      {/* Hero Section */}
+      <main className="max-w-7xl w-full mx-auto px-6 py-16 flex-grow flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="flex-1 text-left max-w-xl">
+          <div className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-[#10b981] bg-[#10b981]/10 border border-[#10b981]/20 px-3 py-1 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"/>
+            Vercel Ready Deploy
+          </div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+            Next-Gen Caching<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#6366f1]">
+              Intelligence
+            </span>
+          </h1>
+          <p className="text-sm sm:text-base text-[#9ca3af] leading-relaxed mb-8">
+            An interactive simulator to benchmark traditional eviction heuristics, multi-level memory hierarchies, and an online-trained Random Forest model that predicts cache utility dynamically.
+          </p>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <button onClick={onLaunch}
+              className="flex items-center justify-center gap-2 bg-[#10b981] hover:bg-[#0ea5e9] text-[#020617] hover:text-[#f9fafb] font-bold py-3.5 px-7 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-[#10b981]/25 hover:shadow-cyan-500/25 cursor-pointer text-sm tracking-wide">
+              <span>Launch Simulator</span>
+              <ChevronRight className="h-4 w-4 stroke-[2.5]"/>
+            </button>
+            <a href="https://github.com/ninjanavya/cache-replacement-system" target="_blank" rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-[#111827] border border-[#1f2937] hover:border-[#374151] hover:bg-[#1e2433] text-[#d1d5db] font-semibold py-3.5 px-6 rounded-xl transition-all duration-300 text-sm">
+              <span>Documentation</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Visual Showcase Card */}
+        <div className="flex-1 w-full max-w-lg lg:max-w-none">
+          <div className="glass-card overflow-hidden shadow-2xl relative border border-[#1f2937]/80 rounded-2xl">
+            <div className="flex items-center justify-between p-4 border-b border-[#1f2937]/50 bg-[#0d1117]/80">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
+              </div>
+              <span className="text-[10px] text-[#6b7280] font-mono">live_preview_diagram.svg</span>
+            </div>
+            <div className="p-4 bg-[#020617]">
+              <SandboxDiagram />
+            </div>
+          </div>
+        </div>
+      </main>
+
+      {/* Feature Pillars Grid */}
+      <section className="bg-[#0b0f19] border-y border-[#1f2937]/50 py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-xs font-bold text-[#6b7280] uppercase tracking-widest text-center mb-10">CORE PLATFORM CAPABILITIES</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: 'Interactive Sandbox', desc: 'Step through cache hits, misses, and evictions key-by-key in real-time. Understand FIFO vs LRU instantly.', icon: Sliders, color: '#a3e635' },
+              { title: 'Traditional Benchmarks', desc: 'Simulate workloads like Zipf, mixed, and scan sequences against FIFO, LRU, LFU, and 2Q.', icon: Cpu, color: '#10b981' },
+              { title: 'Multi-Level Hierarchies', desc: 'Model L1 RAM and L2 Redis tiered caching architectures. Measure latency and EAT reduction.', icon: Layers, color: '#ef4444' },
+              { title: 'ML Caching Model', desc: 'Harness a Random Forest classifier that learns access patterns online to predict optimal eviction.', icon: Zap, color: '#6366f1' },
+            ].map((feature, idx) => (
+              <div key={idx} className="bg-[#020617]/50 p-6 rounded-2xl border border-[#1f2937]/40 hover:border-[#374151]/80 transition-all flex flex-col gap-4">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center border"
+                  style={{ backgroundColor: `${feature.color}10`, borderColor: `${feature.color}20`, color: feature.color }}>
+                  <feature.icon className="h-5 w-5"/>
+                </div>
+                <h3 className="font-semibold text-sm text-[#f9fafb]">{feature.title}</h3>
+                <p className="text-xs text-[#9ca3af] leading-relaxed">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="max-w-7xl w-full mx-auto px-6 py-8 text-center border-t border-[#1f2937]/30 text-xs text-[#374151]">
+        <p>Built with FastAPI + React + Chart.js · Developed by <a href="https://github.com/ninjanavya" target="_blank" rel="noopener noreferrer" className="text-[#10b981] hover:underline">ninjanavya</a></p>
+      </footer>
+    </div>
+  );
+}
+
 // ─── App ───────────────────────────────────────────────────────────────────
 function App() {
+  const [showLandingPage, setShowLandingPage] = useState(true);
   const [activeTab, setActiveTab] = useState('sandbox');
   const [filter, setFilter] = useState('all');
 
   // Sandbox Playground State
+
   const [sandboxCapacity, setSandboxCapacity] = useState(8);
   const [sandboxLength, setSandboxLength] = useState(2000);
   const [sandboxWorkloadType, setSandboxWorkloadType] = useState('zipf');
@@ -1104,18 +1201,20 @@ function App() {
   const inpSm = "w-full bg-[#0d1117] border border-[#1f2937] rounded-lg px-2.5 py-1.5 text-xs text-[#f9fafb] focus:outline-none focus:border-[#10b981] transition-colors";
   const inpXs = "w-full bg-[#0d1117] border border-[#1f2937] rounded px-1.5 py-1 text-xs text-[#d1d5db] focus:outline-none focus:border-[#10b981]";
 
+  if (showLandingPage) {
+    return <LandingPage onLaunch={() => setShowLandingPage(false)} />;
+  }
+
   return (
     <div className="min-h-screen max-w-7xl mx-auto px-5 py-6 font-sans">
 
       {/* ── Header ── */}
       <header className="flex items-center justify-between py-3 mb-8 border-b border-[#1f2937]">
-        <a href="/" className="flex items-center gap-2 font-bold text-[#f9fafb] tracking-tight text-base">
-          <span className="text-[10px] font-medium text-[#6b7280] font-mono bg-[#1e2433] border border-[#1f2937] px-1.5 py-0.5 rounded">Cache Eviction SIM</span>
-        </a>
+        <button onClick={() => setShowLandingPage(true)} className="flex items-center gap-2 font-bold text-[#f9fafb] tracking-tight text-base cursor-pointer">
+          <span className="text-[10px] font-medium text-[#6b7280] font-mono bg-[#1e2433] border border-[#1f2937] hover:border-[#374151] px-1.5 py-0.5 rounded">← Back to Landing Page</span>
+        </button>
 
-
-
-        <a href="https://github.com/ninjanavya" target="_blank" rel="noopener noreferrer"
+        <a href="https://github.com/ninjanavya/cache-replacement-system" target="_blank" rel="noopener noreferrer"
           className="flex items-center gap-1.5 text-xs font-medium text-[#f9fafb] bg-[#111827] border border-[#1f2937] hover:border-[#374151] px-3 py-1.5 rounded-lg transition-all">
           <GitBranch className="h-3.5 w-3.5"/>
           <span className="hidden sm:inline">GitHub</span>
