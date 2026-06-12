@@ -866,9 +866,9 @@ function LandingPage({ onLaunch }) {
             Vercel Ready Deploy
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-            Next-Gen Caching<br/>
+            Cache Evicting<br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10b981] via-[#34d399] to-[#6366f1]">
-              Intelligence
+              Simulator
             </span>
           </h1>
           <p className="text-sm sm:text-base text-[#9ca3af] leading-relaxed mb-8">
