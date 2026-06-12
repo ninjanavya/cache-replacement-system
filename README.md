@@ -1,4 +1,4 @@
-![Cache Eviction Simulator Landing Page](./dashboard/src/assets/landing_page.png)
+![Cache Eviction Simulator Landing Page](./dashboard/src/assets/landing_page_v2.png)
 ## Cache Eviction Simulator
 
 A next-generation, interactive cache simulation platform built with **FastAPI** (Python) and **React Vite** (JavaScript). This system allows you to visual-trace and benchmark traditional cache policies, multi-level memory hierarchies, and an online-trained Machine Learning (Random Forest) cache replacement model.
